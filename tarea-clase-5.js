@@ -15,8 +15,9 @@ $botonCalcular.onclick = function()
     // código que se ejecuta cuando le hagan click a este elemento...
     return false;
 }
+
 */
-fdasf
+
 //TAREA: completar tareas/clase-5/index.html para que incluya tarea-clase-5.js
 //TAREA: crear un formulario donde un usuario pueda ingresar su salario anual.
 //cuando el usuario haga click en el botón "calcular", mostrar el salario mensual
@@ -56,3 +57,15 @@ Ejemplo form:
 // 2. obtener el número más pequeño y mostrarlo en un <em> pre-creado con el texto "El número más pequeño es..."
 // 3. obtener el número más grande y mostrarlo en un <em> pre-creado con el texto "El número más grande es..."
 // 4. obtener el número que más se repite y mostrarlo en un <em> pre-creado con el texto "El número más frecuente es..."
+
+
+let $sueldoAnual = document.querySelector("#salario-anual").value
+console.log(Number($sueldoAnual));
+
+let $sueldoMensual;
+
+let $botonSalarioMensual = document.querySelector("#salario-mensual");
+
+$botonSalarioMensual.onclick = function(){
+  $sueldoAnual / 12;
+}
