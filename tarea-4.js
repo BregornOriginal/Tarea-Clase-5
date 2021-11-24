@@ -36,14 +36,23 @@ function encontrarMaximo(lista) {
 }
 
 function numeroMasFrecuente(lista) {
-  let numeroFrecuente = lista[0];
+  let cantidadRepeticiones = 0;
+  let numeroMasFrecuente;
+  let cantidadNumeroMasFrecuente = 1;
   for (let i = 0; i < lista.length; i++) {
-    if (lista[i] === lista[i + 1] && lista[i] !== numeroFrecuente[i]) {
-      numeroFrecuente = lista[i]
-      
+    for (let j = i; j < lista.length; j++) {
+      if (lista[i] === lista[j]) {
+        cantidadRepeticiones++;
+        console.log(cantidadRepeticiones);
+      }
+      if (cantidadRepeticiones > cantidadNumeroMasFrecuente) {
+        cantidadNumeroMasFrecuente = cantidadRepeticiones;
+        numeroMasFrecuente = lista[i];
+      }
     }
-    
-  }return numeroFrecuente
+    cantidadRepeticiones = 0;
+  }
+  return numeroMasFrecuente;
 }
 
 console.log(
