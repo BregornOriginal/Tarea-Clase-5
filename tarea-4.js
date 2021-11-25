@@ -35,22 +35,21 @@ function encontrarMaximo(lista) {
   return numeroMayor;
 }
 
-function numeroMasFrecuente(lista) {
-  let cantidadRepeticiones = 0;
+function obtenerNumeroMasFrecuente(lista) {
   let numeroMasFrecuente;
   let cantidadNumeroMasFrecuente = 1;
   for (let i = 0; i < lista.length; i++) {
+    let cantidadRepeticiones = 0;
     for (let j = i; j < lista.length; j++) {
       if (lista[i] === lista[j]) {
         cantidadRepeticiones++;
-        console.log(cantidadRepeticiones);
-      }
-      if (cantidadRepeticiones > cantidadNumeroMasFrecuente) {
-        cantidadNumeroMasFrecuente = cantidadRepeticiones;
-        numeroMasFrecuente = lista[i];
       }
     }
-    cantidadRepeticiones = 0;
+
+    if (cantidadRepeticiones > cantidadNumeroMasFrecuente) {
+      cantidadNumeroMasFrecuente = cantidadRepeticiones;
+      numeroMasFrecuente = lista[i];
+    }
   }
   return numeroMasFrecuente;
 }
@@ -72,5 +71,5 @@ console.log(
 );
 console.log(
   (document.querySelector("#numeroMasFrecuente").innerHTML = `El 
-  número más frecuente es ${numeroMasFrecuente(lista)}`)
+  número más frecuente es ${obtenerNumeroMasFrecuente(lista)}`)
 );
